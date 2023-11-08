@@ -6,19 +6,28 @@ function App() {
   return (
     <div className="App">
       <div className='left-column'>
-        `<div className='sub-header'>
+        <div className='sub-header'>
           <h2  style={{textAlign: 'right'}}>Artist and Engineer</h2>
           <p className='second-p'>
             create art
           </p>
         </div>
         <div className='sub-header'>
-            <h2 style={{textAlign: 'left'}}>My </h2>
-            <p style={{textAlign: 'left'}}>
-            Make music
+            <h2 className='second-h2'  style={{textAlign: 'left'}}>My story </h2>
+            <p style={{textAlign: 'right'}}>
+           I began to code during the pandemic and haven't looked back. What started as an outlet for creative energy soon became a professional pursuit. Currently, I work for Vayu AI helping develop fullstack applications. 
             </p>
           </div>
-        </div>`
+
+          <div className='sub-header'>
+            <h2 className='second-h2'  style={{textAlign: 'left'}}>Projects </h2>
+            <p style={{textAlign: 'right'}}>
+           I began to code during the pandemic and haven't looked back. What started as an outlet for creative energy soon became a professional pursuit. Currently, I work for Vayu AI helping develop fullstack applications. 
+            </p>
+          </div>
+
+        </div>
+
       <header className="App-header">
 
         <h1>
@@ -71,14 +80,22 @@ function App() {
           <p>
             I build websites, mobile applications
           </p>
-        </div>
-
-        <div className='sub-header'>
-          <h2 style={{textAlign: 'right'}}></h2>
-          <p style={{textAlign: 'left'}}>
-           Make music
+          <p className='second-p' style={{textAlign: 'left'}}>
+           make music
           </p>
         </div>
+        <div className='sub-header '>
+            <h2 style={{textAlign: 'left'}}></h2>
+            <p className='third-p' style={{textAlign: 'middle'}}>
+              In my free time I try to unlock the complexities of the guitar, throw paint at the walls, and have fun with color pencils and sharpies. 
+            </p>
+         </div>  
+         <div className='sub-header'>
+            <h2 className='second-h2'  style={{textAlign: 'left'}}>My story </h2>
+            <p style={{textAlign: 'right'}}>
+           I began to code during the pandemic and haven't looked back. What started as an outlet for creative energy soon became a professional pursuit. Currently, I work for Vayu AI helping develop fullstack applications. 
+            </p>
+          </div>     
       </div>
     </div>
   );
