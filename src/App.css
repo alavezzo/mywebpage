@@ -18,6 +18,12 @@
 .App-link {
   color: #d2d1d0;
 }
+.App-header{
+
+  background: #d2d1d0;
+  color: #080808;
+}
+
 
 @keyframes App-logo-spin {
   from {
@@ -46,3 +52,8 @@
 .third-p {
   margin-top: calc(80px + 2vmin);
 }
+
+.third-h2 {
+  margin-top: calc(120px + 2vmin);
+}
+

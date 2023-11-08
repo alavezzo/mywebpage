@@ -17,11 +17,11 @@ code {
 @font-face {
   font-family: "VaguelyFatal";   /*Can be any text*/
   src: local("VaguelyFatal"),
-    url("./fonts/VaguelyFatal.ttf") format("truetype");
+    url("./assets/fonts/VaguelyFatal.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Steiner";   /*Can be any text*/
   src: local("SteinerLight"),
-    url("./fonts/SteinerLight.ttf") format("truetype");
+    url("./assets/fonts/SteinerLight.ttf") format("truetype");
 }

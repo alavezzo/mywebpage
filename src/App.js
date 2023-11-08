@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import "./fonts/VaguelyFatal.ttf"
+import assortment79 from './assets/images/Assortment79.jpg'
 
 function App() {
   return (
@@ -20,17 +20,15 @@ function App() {
           </div>
 
           <div className='sub-header'>
-            <h2 className='second-h2'  style={{textAlign: 'left'}}>Projects </h2>
-            <p style={{textAlign: 'right'}}>
-           I began to code during the pandemic and haven't looked back. What started as an outlet for creative energy soon became a professional pursuit. Currently, I work for Vayu AI helping develop fullstack applications. 
-            </p>
+            <h2 className='second-h2'  style={{textAlign: 'right'}}>Projects </h2>
+            
           </div>
 
         </div>
 
-      <header className="App-header">
+      <header className='App-header' style={{ backgroundImage: require('./assets/images/Assortment79.jpg').default,  backgroundSize:'cover'}} >
 
-        <h1>
+        <h1 style={{}}> 
           A
         </h1>
         <h1>
@@ -91,10 +89,8 @@ function App() {
             </p>
          </div>  
          <div className='sub-header'>
-            <h2 className='second-h2'  style={{textAlign: 'left'}}>My story </h2>
-            <p style={{textAlign: 'right'}}>
-           I began to code during the pandemic and haven't looked back. What started as an outlet for creative energy soon became a professional pursuit. Currently, I work for Vayu AI helping develop fullstack applications. 
-            </p>
+            <h2 className='third-h2'  style={{textAlign: 'center'}}>Other Fun Stuff </h2>
+            <img src={assortment79}/>
           </div>     
       </div>
     </div>
