@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
   align-items: top;
-  justify-content: center;
+  justify-content: middle;
   font-size: calc(8px + 2vmin);
   color: #d2d1d0;
   flex-direction: row;
@@ -18,12 +18,6 @@
 .App-link {
   color: #d2d1d0;
 }
-.App-header{
-
-  background: #d2d1d0;
-  color: #080808;
-}
-
 
 @keyframes App-logo-spin {
   from {
@@ -34,8 +28,14 @@
   }
 }
 
-.left-column, .right-column {
-  width: 40%;
+.left-column {
+  width: 15%;
+  margin: 4vh;
+  position: fixed;
+}
+.right-column {
+  width: 75%;
+  margin: 4vh;
 }
 .sub-header {
   align-self: top;
@@ -45,9 +45,10 @@
   margin-top: calc(30px + 2vmin);
 }
 
-.second-h2 {
-  margin-top: calc(60px + 2vmin);
+.sideName {
+  margin-left: 15%;
 }
+
 
 .third-p {
   margin-top: calc(80px + 2vmin);
@@ -57,3 +58,62 @@
   margin-top: calc(120px + 2vmin);
 }
 
+.projects {
+  background:none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-y: scroll;
+  list-style: none;
+}
+
+.project-list-item {
+  background: none;
+  border: none;
+  height: max-content;
+  width: 100%;
+}
+
+.project-list-button {
+  text-align: left;
+  align-items: top;
+  font-size: 1.8vh;
+  margin: 2%;
+  padding: 2%;
+  display: flex;
+  text-decoration: none;
+  flex-direction: row;
+  border-radius: 5px;
+  background: none;
+  width: 92%;
+  color: #d2d1d0;
+  border: none;
+  height: max-content;
+  text-shadow: 0 0 1px #a8a7a6;
+
+}
+.project-list-button:hover {
+  background: #d14031;
+
+  border-radius: 5px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+.menu a {
+  text-decoration: none;
+  color:  #d2d1d0;
+  margin-bottom: 7%;
+  font-size:medium;
+}
+
+.menu a:hover {
+  color:  #d14031;
+}
+
+html:not([data-scroll='0']) header {
+  position: fixed;
+}
