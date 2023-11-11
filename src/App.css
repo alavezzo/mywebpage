@@ -27,26 +27,61 @@
     transform: rotate(360deg);
   }
 }
-
-.left-column {
-  width: 15%;
-  margin: 4vh;
+.header-column {
+  display: flex;
+  justify-content: space-around;
+  background-color: #080808;
+  width: 100%;
+  height: 10vh;
+  align-items: center;
   position: fixed;
 }
-.right-column {
-  width: 75%;
-  margin: 4vh;
+.header {
+  text-decoration: none;
+  color:  #d2d1d0;
+  text-align: left;
+  width: 44vw;
+  margin-top: 0;
+  margin-right: 2vw;
+  margin-left: 4vw;
+  font-size:  calc(8px + 2vmin);
+}
+.menu {
+  width: 50vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.menu .outOfView {
+  text-decoration: none;
+  color:  #d2d1d0;
+  font-size:calc(2px + 2vmin);
+}
+.menu .inView {
+  text-decoration: none;
+  color:  #d14031;
+  font-size:calc(2px + 2vmin);
+}
+.menu a:hover {
+  font-size: calc(4px + 2vmin);
 }
 
-
+.right-column {
+  width: 70vw;
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+.about-section {
+  margin-top: 10vh;
+}
+.center-column {
+  margin-top: 10vh;
+  width: 20vw;
+}
 .second-p {
   margin-top: calc(30px + 2vmin);
 }
-
-.sideName {
-  margin-left: 15%;
-}
-
 
 .third-p {
   margin-top: calc(80px + 2vmin);
@@ -103,10 +138,7 @@
 .project-list-button p {
   font-size: small;
 }
-.menu {
-  display: flex;
-  flex-direction: column;
-}
+
 .sub-header {
   display: flex;
   width: '100%';
@@ -120,22 +152,40 @@
   width: 100%;
   font-size: larger;
 }
-.menu .outOfView {
-  text-decoration: none;
-  color:  #d2d1d0;
-  margin-bottom: 7%;
-  font-size:medium;
-}
-.menu .inView {
-  text-decoration: none;
-  color:  #d14031;
-  margin-bottom: 7%;
-  font-size:medium;
-}
-.menu a:hover {
-  font-size: large;
-}
 
 html:not([data-scroll='0']) header {
   position: fixed;
+}
+
+@media only screen and (min-width: 865px) {
+  .header-column {
+    display: inline-block;
+    width: 12vw;
+    margin-left: 3vw;
+    margin-top: 6vh;
+    position: fixed;
+    height: 100%;
+  }
+  .header {
+    font-size: larger;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+  }
+  .menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-Top: 4vh;
+    height: 20vh;
+  }
+  .right-column {
+    width: 75vw;
+  }
+  .center-column {
+    margin-top: 2vh;
+    margin-left: 15vw;
+    width: 10vw;
+  }
+ 
 }

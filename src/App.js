@@ -66,14 +66,11 @@ function App() {
 
   return (
     <div className="App">
-      <div className='left-column'>
-        <div>
-          <div className='sub-header'>
-        <a  href='#about'>
-        Anthony Lavezzo
-          </a>
-          </div>
-          <div className='menu' style={{textAlign: 'left'}}>
+      <div className='header-column'>
+            <a className='header' href='#about'>
+              Anthony Lavezzo
+            </a>
+          <div className='menu'>
        
             <a onMouseEnter={mouseEnter} className={aboutSectionIsVisible ? 'inView' : ' outOfView'} href='#about'>
             About
@@ -87,13 +84,11 @@ function App() {
             Other fun stuff
             </a>
          
-            </div>
-        </div>
-        
-          
+            </div>  
+
         </div>
 
-      <div className='sideName' style={{width: '10%'}} >
+      <div className='center-column'  >
 
         <h1> 
           P
@@ -142,18 +137,18 @@ function App() {
         </h1>
         <p>FullStack Developer</p>
       </div>
-      <div  id='about' className='right-column'>
-        <div ref={aboutRef} className='sub-header'>
+      <div id='about' className='right-column'>
+        <div ref={aboutRef} className='about-section'>
             <p style={{textAlign: 'center'}}>
            I began to code a couple years ago and haven't looked back. What started as an outlet for creative energy soon became a professional pursuit. Currently, I work for <a target='_blank' rel='noreferrer'  href={'https://vayuai.com'}style={{textDecoration: 'none', color: '#d14031'}}>Vayu AI</a> helping develop fullstack applications. 
             </p>
           </div>
          <div className='sub-header'>
-            <p style={{width: '100%', textAlign: 'center'}}>
+            <p id="projects"  style={{width: '100%', textAlign: 'center'}}>
               In my free time I write music,  paint, and draw. 
             </p>
           </div>     
-          <div id="projects"  style={{display: 'flex', flexDirection: 'column', alignItems: 'right', width: '100%'}}className='sub-header'>
+          <div style={{display: 'flex', flexDirection: 'column', alignItems: 'right', width: '100%'}}className='sub-header'>
             <h2  className='second-h2'  style={{textAlign: 'center'}}>Projects </h2>
             <ul ref={projectRef} className={'projects'} > {projects.map((project,idx) => (
                 <li className='project-list-item' key={idx} >
