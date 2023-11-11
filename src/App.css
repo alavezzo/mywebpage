@@ -37,9 +37,7 @@
   width: 75%;
   margin: 4vh;
 }
-.sub-header {
-  align-self: top;
-}
+
 
 .second-p {
   margin-top: calc(30px + 2vmin);
@@ -70,15 +68,20 @@
 
 .project-list-item {
   background: none;
+  padding: 3%;
   border: none;
   height: max-content;
-  width: 100%;
+  width: 90%;
+}
+.project-list-item:hover {
+  background: #d14031;
+  border-radius: 5px;
 }
 
 .project-list-button {
   text-align: left;
   align-items: top;
-  font-size: 1.8vh;
+  font-size: small;
   margin: 2%;
   padding: 2%;
   display: flex;
@@ -93,25 +96,44 @@
   text-shadow: 0 0 1px #a8a7a6;
 
 }
-.project-list-button:hover {
-  background: #d14031;
 
-  border-radius: 5px;
+.project-list-button h3{
+  font-size: medium;
 }
-
+.project-list-button p {
+  font-size: small;
+}
 .menu {
   display: flex;
   flex-direction: column;
 }
-.menu a {
+.sub-header {
+  display: flex;
+  width: '100%';
+}
+.sub-header a {
+  text-decoration: none;
+  color:  #d2d1d0;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-size: larger;
+}
+.menu .outOfView {
   text-decoration: none;
   color:  #d2d1d0;
   margin-bottom: 7%;
   font-size:medium;
 }
-
-.menu a:hover {
+.menu .inView {
+  text-decoration: none;
   color:  #d14031;
+  margin-bottom: 7%;
+  font-size:medium;
+}
+.menu a:hover {
+  font-size: large;
 }
 
 html:not([data-scroll='0']) header {

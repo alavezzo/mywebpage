@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 import './App.css';
 import assortment79 from './assets/images/Assortment79.jpg'
 
@@ -7,7 +7,6 @@ const projects = [
       title: 'VayuAI Wind Opportunity Tool',
       text:
           "Allows geolocation and viewing of all US Wind Turbines. Users can view details pertaining to each US turbine and wind farm as well as Vayu generated Power Reporst. Built with the REACT, AWS, Mapbox",
-      // image: yellow,
       name: 'Turbine Viewer',
       href: 'https://vayuaidata.com',
       alt: 'Turbine Viewer gif',
@@ -18,7 +17,6 @@ const projects = [
       title: 'VayuAI Wind Dashboards',
       text:
           "Displays current and historical wind data for wind farm operators.",
-      // image: yellow,
       name: 'Turbine Viewer',
       href: 'https://vayuaidata.com',
       alt: 'Wind Dash gif',
@@ -29,7 +27,6 @@ const projects = [
         title: 'Cocktail and Music Pairings',
         text:
           "This application returns a list of music recommended to pair with a selected cocktail. Users can add their favorite music to a favorites list that is stored locally. Built with JQuery, HTMl, and Bootstrap CSS.",
-        // image: blue,
           name: 'Cocktail and Music Pairings',
           href: 'https://alavezzo.github.io/prism/',
           github: 'https://github.com/alavezzo/prism#readme',
@@ -41,7 +38,6 @@ const projects = [
         title: 'Employee Database Interface',
         text:
           "This command line application guides users as they interface with a MySql database storing Employee information. Built with Node.js, Inquirer, and MySql.",
-        // image: pink,
         name: 'Employee Database Interface',
         href: 'https://github.com/alavezzo/employee-tracker#readme',
         github: 'https://github.com/alavezzo/employee-tracker#readme',
@@ -55,23 +51,42 @@ const mouseEnter = (e) => {
   e.target.style={color: '#d14031',  cursor: 'pointer'}
 }
 function App() {
-  const [menuItem, setMenuItem] = useState(0)
-  
+ 
+  const {ref: aboutRef, inView: aboutSectionIsVisible} = useInView({
+    threshold: .6
+  }
+    );
+  const {ref: projectRef, inView: projectSectionIsVisible} = useInView({
+    threshold: .8
+  });
+  const {ref: otherFunRef, inView: otherFunIsVisible} = useInView({
+    threshold: .5
+  });
+
+
   return (
     <div className="App">
       <div className='left-column'>
-        <div className='sub-header'>
-          <h2  style={{textAlign: 'left'}}>Anthony Lavezzo</h2>
+        <div>
+          <div className='sub-header'>
+        <a  href='#about'>
+        Anthony Lavezzo
+          </a>
+          </div>
           <div className='menu' style={{textAlign: 'left'}}>
-            <a onMouseEnter={mouseEnter} style={{fontWeight: menuItem===0 ? 'bold' : 'normal', color: menuItem===0 ? '#d14031' : ' #d2d1d0'}} href='#about'>
-            FullStack Developer
+       
+            <a onMouseEnter={mouseEnter} className={aboutSectionIsVisible ? 'inView' : ' outOfView'} href='#about'>
+            About
             </a>
-            <a onMouseEnter={mouseEnter}style={{fontWeight: menuItem===1 ? 'bold' : 'normal', color: menuItem===1 ? '#d14031' : ' #d2d1d0'}}href='#projects'>
+          
+            <a onMouseEnter={mouseEnter}  className={projectSectionIsVisible ? 'inView' : ' outOfView'} href='#projects'>
             Projects 
             </a>
-            <a onMouseEnter={mouseEnter} style={{fontWeight: menuItem===2 ? 'bold' : 'normal', color: menuItem===2 ? '#d14031' : ' #d2d1d0'}}href='#hobbies'>
+         
+            <a onMouseEnter={mouseEnter} className={otherFunIsVisible ? 'inView' : ' outOfView'} href='#hobbies'>
             Other fun stuff
             </a>
+         
             </div>
         </div>
         
@@ -125,23 +140,24 @@ function App() {
         <h1>
          D
         </h1>
+        <p>FullStack Developer</p>
       </div>
       <div  id='about' className='right-column'>
-        <div className='sub-header'>
+        <div ref={aboutRef} className='sub-header'>
             <p style={{textAlign: 'center'}}>
-           I began to code a couple years ago and haven't looked back. What started as an outlet for creative energy soon became a professional pursuit. Currently, I work for <a target='_blank' href={'https://vayuai.com'}style={{textDecoration: 'none', color: '#d14031'}}>Vayu AI</a> helping develop fullstack applications. 
+           I began to code a couple years ago and haven't looked back. What started as an outlet for creative energy soon became a professional pursuit. Currently, I work for <a target='_blank' rel='noreferrer'  href={'https://vayuai.com'}style={{textDecoration: 'none', color: '#d14031'}}>Vayu AI</a> helping develop fullstack applications. 
             </p>
           </div>
          <div className='sub-header'>
-            <p className='second-p' style={{textAlign: 'center'}}>
+            <p style={{width: '100%', textAlign: 'center'}}>
               In my free time I write music,  paint, and draw. 
             </p>
           </div>     
           <div id="projects"  style={{display: 'flex', flexDirection: 'column', alignItems: 'right', width: '100%'}}className='sub-header'>
-            <h2 className='second-h2'  style={{textAlign: 'center'}}>Projects </h2>
-            <ul className={'projects'} > {projects.map((project,idx) => (
+            <h2  className='second-h2'  style={{textAlign: 'center'}}>Projects </h2>
+            <ul ref={projectRef} className={'projects'} > {projects.map((project,idx) => (
                 <li className='project-list-item' key={idx} >
-                    <a href={project.href} target='_blank' className='project-list-button' >
+                    <a href={project.href} rel='noreferrer' target='_blank' className='project-list-button' >
                     <img style={{boxShadow: '0 0 5px #d14031',height: '75px', width: '120px'}} src={project.src} alt={project.alt}></img>
                       <div style={{marginTop: 0, marginLeft: 25, padding: 0}}>
                       <h3 style={{margin: 0, padding: 0}}> {project.title}</h3>
@@ -153,9 +169,10 @@ function App() {
                     </li>
                 ))} </ul> 
           </div>
+          <div ref={otherFunRef}>
           <h2  id='hobbies' style={{textAlign: 'center'}}>Other fun stuff </h2>
-          <img src={assortment79}/>
-         
+          <img alt='Assortment 79' src={assortment79}/>
+          </div>
       </div>
     </div>
   );
