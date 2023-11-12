@@ -26,7 +26,7 @@ const projects = [
       {
         title: 'Cocktail and Music Pairings',
         text:
-          "This application returns a list of music recommended to pair with a selected cocktail. Users can add their favorite music to a favorites list that is stored locally. Built with JQuery, HTMl, and Bootstrap CSS.",
+          "This application returns a list of music recommended to pair with a selected cocktail. Users can add their favorite music to a favorites list that is stored locally. Built with JQuery, HTML, and Bootstrap CSS.",
           name: 'Cocktail and Music Pairings',
           href: 'https://alavezzo.github.io/prism/',
           github: 'https://github.com/alavezzo/prism#readme',
