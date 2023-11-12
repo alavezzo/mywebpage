@@ -16,7 +16,7 @@ const projects = [
     {
       title: 'VayuAI Wind Dashboards',
       text:
-          "Displays current and historical wind data for wind farm operators.",
+          "Wind monitoring displays for wind farm operators and stakeholders.",
       name: 'Turbine Viewer',
       href: 'https://vayuaidata.com',
       alt: 'Wind Dash gif',
