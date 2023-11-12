@@ -6,7 +6,7 @@ const projects = [
     {
       title: 'VayuAI Wind Opportunity Tool',
       text:
-          "Allows geolocation and viewing of all US Wind Turbines. Users can view details pertaining to each US turbine and wind farm as well as Vayu generated Power Reporst. Built with the REACT, AWS, Mapbox",
+          "Allows geolocation and viewing of all US Wind Turbines. Users can view details pertaining to each US turbine and wind farm as well as Vayu generated power reports. Built with the REACT, AWS, Mapbox",
       name: 'Turbine Viewer',
       href: 'https://vayuaidata.com',
       alt: 'Turbine Viewer gif',
